@@ -1,0 +1,35 @@
+Soal no 1
+CREATE DATABASE myshop;
+
+Soal no 2
+A. table USERS
+CREATE TABLE users ( id int primary key AUTO_INCREMENT, name varchar(255) not null,
+
+B. table categoris
+create table categories ( id int PRIMARY KEY AUTO_INCREMENT, name varchar(255) not null );
+
+C. table items
+CREATE TABLE items ( id int PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) NOT null, description VARCHAR(255) NOT null, price int NOT null, stock int NOT null, categories_id int, FOREIGN KEY (categories_id) REFERENCES categories(id) );
+
+Soal No 3
+A. Users
+INSERT INTO users (name, email, password) VALUES ("Yugyezra_Limbong", "john@Doe.com", "John123"), ("jane_doe", "jane@Doe.com", "jenita123");
+
+B. categories
+insert into categories(name) values ("gadget"), ("cloth"), ("men"), ("women"), ("branded");
+
+C. itemsINSERT INTO items(name, description, price, stock, categories_id) VALUES ("sumsang b50", "hape keren dari merek sumsang", "4000000", "100", "1"), ("Unikloooh", "baju keren dari brand ternama", "500000", "50", "2"), ("IMHO watch", "jam tangan anak yang jujur banget", "2000000", "10", "1");
+
+Soal No 4
+A. Users
+SELECT id, name, email FROM `users`;
+
+B. items
+SELECT * FROM `items` WHERE price > 1000000;
+SELECT * FROM `items` WHERE name like '%watch';
+
+C.  items dengan join categories 
+select items.id, items.name, items.description, items.price, items.stock, items.categories_id, categories.name as categories from items inner join categories on items.categories_id = categories.id;
+
+Soal No 5
+UPDATE items set price=2500000 where id=1;
