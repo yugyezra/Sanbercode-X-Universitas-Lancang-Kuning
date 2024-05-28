@@ -14,8 +14,17 @@ use App\Http\Controllers\homecontroller;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [homeController::class, 'index']);
 
-Route::get('/Register', [HomeController::class, 'Register']);
+Route::get('/register', [homeController::class, 'register']);
 
-Route::post('/send', [HomeController::class, 'send']);
+Route::post('/send', [homeController::class, 'send']);
+
+
+Route::get('/table', function () {
+    return view('page.table');
+});
+
+Route::get('/data-table', function () {
+    return view('page.data-table');
+});

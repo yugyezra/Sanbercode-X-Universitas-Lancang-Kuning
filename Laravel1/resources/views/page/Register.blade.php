@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Buat Account Baru</h1>
-    <h2>Sign Up Form</h2>
-    <form action="/send" method="post"> 
-        @csrf
-        <label for="fname">First name:</label><br><br>
-        <input type="text" id="fname" name="fname"><br><br>
-        <label for="lname">Last name:</label><br><br>
-        <input type="text" id="lname" name="lname"><br><br>
-        <label >Gender:</label> <br>
-        <input type="radio" name="Gender"> Male <br>
-        <input type="radio" name="Gender"> Famale <br>
-        <input type="radio" name="Gender"> Other <br> <br> 
-        <label >Nationaly:</label> <br>
-        <select name="Nationality:">
-            <option value="">Indonesian</option>
-            <option value="">Singapore</option>
-            <option value="">Malaysia</option>
-            <option value="">Automation</option>
-        </select> <br> <br>
-        <label >Language Spoken:</label> <br>
-        <input type="checkbox" name="Language Spoken"> Bahasa Indonesia <br>
-        <input type="checkbox" name="Language Spoken"> English <br>
-        <input type="checkbox" name="Language Spoken"> Other <br> <br>
-        <label >Bio:</label> <br>
-        <textarea cols="30" rows="10"></textarea> <br> <br>
-       <input type="submit" value="sign Up">
-    </form>
-</body>
-</html>
+@extends('layouts.master')
+
+@section('title')
+  
+@endsection
+
+@section('content')
+<h2>Buat Account Baru!</h2>
+<h4>Sign Up Form </h4>
+<form action="/send" method="post">
+    @csrf
+  <label for="fname">First name:</label><br><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label><br><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="gender">Gender:</label><br><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label><br><br>
+  <label for="nationality">Nationality:</label><br><br>
+  <select id="nationality" name="nationality"><br><br>
+    <option value="indonesia" selected>Indonesian</option>
+    <option value="singapore">Singaporean</option>
+    <option value="malaysia">Malaysian</option>
+    <option value="australia">Australian</option>
+</select><br><br>
+  <label for="language">Language Spoken:</label><br><br>
+  <input type="checkbox" id="indonesia" name="language" value="indonesia">
+  <label for="indonesian">Bahasa Indonesia</label><br>
+  <input type="checkbox" id="english" name="language" value="english">
+  <label for="english">English</label><br>
+  <input type="checkbox" id="other" name="language" value="other">
+  <label for="other">Other</label><br><br>
+  <label for="bio">Bio:</label><br><br>
+  <textarea id="bio" name="bio" rows="10" cols="30"></textarea><br>
+  <input type="submit" value="Sign Up">
+</form>
+@endsection

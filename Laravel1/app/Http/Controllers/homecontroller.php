@@ -6,22 +6,18 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return view('home');
     }
 
-    public function register()
-    {
+    public function register() {
         return view('page.register');
     }
 
-    public function send(Request $request)
-    {
-        $firstName = $request->input('fname');
-        $lastName = $request->input('lname');
+    public function send(Request $request) {
+        $Firstname = $request->input('fname');
+        $Lastname = $request->input('lname');
 
-        return view('page.welcome', ['firstName' => $firstName, 'lastName' => $lastName]);
+        return view('page.welcome', ['Firstname' => $Firstname, 'Lastname' => $Lastname, ]);
     }
 }
-    
